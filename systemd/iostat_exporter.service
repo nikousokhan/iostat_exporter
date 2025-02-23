@@ -1,0 +1,13 @@
+[Unit]
+Description=Iostat Exporter for Prometheus
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/iostat_exporter
+Restart=always
+Environment="EXPORTER_HOST=0.0.0.0"
+Environment="EXPORTER_PORT=9200"
+
+[Install]
+WantedBy=multi-user.target
