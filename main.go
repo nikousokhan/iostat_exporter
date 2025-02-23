@@ -13,22 +13,20 @@ import (
 )
 
 func main() {
-	// دریافت مقدار آی‌پی و پورت از متغیرهای محیطی (با مقدار پیش‌فرض)
 	host := os.Getenv("EXPORTER_HOST")
 	if host == "" {
-		host = "0.0.0.0" // مقدار پیش‌فرض
+		host = "0.0.0.0" 
 	}
 
 	port := os.Getenv("EXPORTER_PORT")
 	if port == "" {
-		port = "9100" // مقدار پیش‌فرض
+		port = "9100"
 	}
 
 	address := fmt.Sprintf("%s:%s", host, port)
 
 	collector.RegisterMetrics()
 
-	// Goroutine برای جمع‌آوری متریک‌ها
 	go func() {
 		for {
 			collector.CollectIostatMetrics()

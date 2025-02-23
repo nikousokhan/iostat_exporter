@@ -8,7 +8,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-// StartServer راه‌اندازی سرور HTTP برای جمع‌آوری متریک‌ها
 func StartServer() {
 	http.Handle("/metrics", promhttp.Handler())
 	fmt.Println("Exporter running on :9100")

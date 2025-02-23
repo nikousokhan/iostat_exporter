@@ -14,7 +14,6 @@ import (
 
 
 
-// تعریف متریک‌های Prometheus
 var (
 	iostatReadRequests = prometheus.NewGaugeVec(
 		prometheus.GaugeOpts{Name: "iostat_read_requests", Help: "Read requests per second"},
@@ -74,7 +73,6 @@ var (
 	)	
 )
 
-// RegisterMetrics ثبت متریک‌ها در Prometheus
 func RegisterMetrics() {
 	prometheus.MustRegister(iostatReadRequests)
 	prometheus.MustRegister(iostatReadKB)
@@ -92,7 +90,6 @@ func RegisterMetrics() {
 	prometheus.MustRegister(iostatAvgQueueSize)
 }
 
-// CollectIostatMetrics جمع‌آوری اطلاعات iostat
 func CollectIostatMetrics() {
 	cmd := exec.Command("iostat", "-xd", "1", "1")
 	output, err := cmd.Output()

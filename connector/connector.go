@@ -5,7 +5,6 @@ import (
 	"os/exec"
 )
 
-// اجرای iostat و بازگردانی خروجی
 func RunIostat() (string, error) {
 	cmd := exec.Command("iostat", "-xd", "5")
 	var out bytes.Buffer

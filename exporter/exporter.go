@@ -7,7 +7,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 )
 
-// تعریف متریک‌ها
 var (
 	readOps = promauto.NewGaugeVec(prometheus.GaugeOpts{
 		Name: "disk_read_ops",
