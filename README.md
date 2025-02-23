@@ -141,7 +141,7 @@ git clone https://github.com/nikousokhan/iostat_exporter.git
 
 Since your exporter runs an HTTP server and exposes metrics at `/metrics`, you should add a **simple health check** using `curl` to verify that it's working properly.
 
-### 1️⃣ Test the Exporter Manually  
+### Test the Exporter Manually  
 
 After starting the exporter, you can check if the metrics are available by running:  
 
